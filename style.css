@@ -12,3 +12,8 @@ html{
     border: solid 1px rgb(0, 0, 0);
     height: 20px;
 }
+.button{
+    margin-bottom: 5px;
+    background-color: rgb(112, 215, 80);
+    font-size: 30px;
+}
