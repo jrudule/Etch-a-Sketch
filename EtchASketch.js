@@ -13,7 +13,7 @@ function makeGrid(rows, columns) {
             row.appendChild(column).className = "column";
 
             column.addEventListener("mouseover", function(event){
-                //Maina dažādas krāsas:
+                //Changes to different colors:
                 let rgb1 = Math.floor(Math.random() * 255);
                 let rgb2 = Math.floor(Math.random() * 255);
                 let rgb3 = Math.floor(Math.random() * 255);
@@ -34,11 +34,14 @@ function deleteOldGrid() {
     .forEach((e) => e.parentNode.removeChild(e));
 }
 
-//Izveido jaunu grid
+//Makes new grid:
 button.onclick = function(){
     let cell = prompt("Enter the number of squares per side to make grid!");
     while(cell<0 || cell>100){
         cell = prompt("Number must be between 0 and 100!");
+    }
+    if(cell === null){
+        cell = 16;
     }
     deleteOldGrid();
     makeGrid(cell, cell);
